@@ -1,1 +1,1 @@
-## MINIMAL powered by Laravel 4
+## MINIMAL powered by Laravel 4 Framework
