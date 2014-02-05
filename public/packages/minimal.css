@@ -1,12 +1,25 @@
-.minimal_h{
 
+.top{
+	background-color:#202020;
+	padding:2px;
+}
+
+.topD{
+	margin-top:20px;
+}
+.topB{
+	margin-bottom:20px;
+}
+.minimal_h{
 	font-family: 'Exo 2', sans-serif;
 	color: #8A9B0F;
-
+}
+.minimal_h6{
+	color: #fff;
+	display:inline;
 }
 
 .minimal_container{
 
-	width:600px;
 
 }
