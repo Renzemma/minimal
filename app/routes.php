@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('minimal.dashboard');
-});
+
+Route::resource('minimal','EnterController');
+Route::resource('posts','PostsController');
