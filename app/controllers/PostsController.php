@@ -19,7 +19,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('minimal.createPost');
+		return View::make('minimal.postsCreate');
 	}
 
 	/**
