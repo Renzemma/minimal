@@ -11,6 +11,8 @@
 |
 */
 
-
+Route::get('/',function(){
+	return Redirect::route('minimal.index');
+});
 Route::resource('minimal','EnterController');
 Route::resource('posts','PostsController');

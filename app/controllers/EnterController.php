@@ -9,7 +9,52 @@ class EnterController extends \BaseController {
 	 */
 	public function index()
 	{
+		return View::make('minimal.login');
+	}
+
+	/**
+	 * Let the user enter to the system
+	 *
+	 * @return Response
+	 */
+	public function enter()
+	{
 		return View::make('minimal.dashboard');
+	}
+
+
+	/**
+	 * Check user credentials
+	 *
+	 * @return Response
+	 */
+	public function login()
+	{
+		if (Auth::check())
+		{
+			return Redirect::to('enter');
+		}else{			
+			$datos = Input::all();
+			if (Auth::attempt(array(
+				'username' => $datos['username'], 
+				'password' => $datos['password'])))
+			{
+				return Redirect::to('enter');
+			}else{
+				return Redirect::to('/');
+			}	
+		}
+	}
+	
+	/**
+	 * Route user to the end of the way
+	 *
+	 * @return Response
+	 */
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::to('/');
 	}
 
 	/**

@@ -29,7 +29,16 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+
+		$inputData = Input::all();
+
+		$user = new Post;
+
+		$user->user_id = Auth::user()->id;
+		$user->title = $inputData['title'];
+		$user->content = $inputData['content'];
+
+		$user->save();
 	}
 
 	/**

@@ -11,8 +11,8 @@ class Users extends Migration {
 			$table->increments('id');
 			$table->string('username', 16)->unique();
 			$table->string('password', 64);
-			$table->sting('nombre', 16);
-			$table->sting('apellido', 16);
+			$table->string('nombre', 16);
+			$table->string('apellido', 16);
 			$table->string('img');
 			$table->timestamps();
 
@@ -21,7 +21,9 @@ class Users extends Migration {
 
 	public function down()
 	{
+		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 		Schema::dropIfExists('users');
+		DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 	}
 
 }
