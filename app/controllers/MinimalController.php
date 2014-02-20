@@ -1,6 +1,6 @@
 <?php
 
-class PostsController extends \BaseController {
+class MinimalController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,9 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
-		$data['posts'] = $posts;
-		return View::make('minimal.posts', $data);
+		return View::make('minimal.dashboard');
 	}
 
 	/**
@@ -21,7 +19,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('minimal.postsCreate');
+		//
 	}
 
 	/**
@@ -31,19 +29,7 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-
-			$inputData = Input::all();
-
-			$user = new Post;
-
-			$user->user_id = Auth::user()->id;
-			$user->title = $inputData['title'];
-			$user->content = $inputData['content'];
-
-			$user->save();
-
-			return Redirect::to('posts');
-
+		//
 	}
 
 	/**

@@ -21,6 +21,7 @@ return array(
 	'logout' => 'Desconectarse',
 	'user' => 'Usuario',
 	'password' => 'Codigo Personal',
+	'rememberMe' => 'Recordar mis datos',
 
 	//Users
 	'createUser' => 'Crear Usuario',
@@ -29,7 +30,15 @@ return array(
 	'deleteUser' => 'Eliminar Usuario',
 
     //System
+    'hash' => '#',
 	'save' => 'Guardar',
 	'edit' => 'Editar',
-	'delete' => 'Eliminar'
+	'delete' => 'Eliminar',
+	'create' => 'Crear',
+	'title' => 'Titulo',
+	'creator' => 'Creador',
+	'options' => 'Opciones',
+
+	'mainContent' => 'Contenido Principal',
+	'krakenCliche' => 'Liberen al Kraken...digo...las ideas'
 	);

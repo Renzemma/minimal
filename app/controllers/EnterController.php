@@ -30,19 +30,13 @@ class EnterController extends \BaseController {
 	 */
 	public function login()
 	{
-		if (Auth::check())
+		$datos = Input::all();
+
+		if (Auth::attempt(array(
+			'username' => $datos['username'],
+			'password' => $datos['password'])))
 		{
-			return Redirect::to('enter');
-		}else{			
-			$datos = Input::all();
-			if (Auth::attempt(array(
-				'username' => $datos['username'], 
-				'password' => $datos['password'])))
-			{
-				return Redirect::to('enter');
-			}else{
-				return Redirect::to('/');
-			}	
+		    return Redirect::intended('go');
 		}
 	}
 	
