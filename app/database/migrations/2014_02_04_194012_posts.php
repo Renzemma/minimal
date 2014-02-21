@@ -10,8 +10,7 @@ class Posts extends Migration {
 		Schema::create('posts', function($table){
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
-			$table->string('title');
-			$table->longText('content');
+			$table->string('content');
 			$table->timestamps();
 			
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
@@ -26,4 +25,3 @@ class Posts extends Migration {
 	}
 
 }
-

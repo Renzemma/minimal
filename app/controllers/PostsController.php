@@ -9,9 +9,9 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(10);
 		$data['posts'] = $posts;
-		return View::make('minimal.posts', $data);
+		return View::make('minimal.posts.posts', $data);
 	}
 
 	/**
@@ -21,7 +21,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('minimal.postsCreate');
+		return View::make('minimal.posts.postsCreate');
 	}
 
 	/**
@@ -54,7 +54,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return "1111";
 	}
 
 	/**
@@ -65,7 +65,9 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = Post::find($id);
+		$data['post'] = $post;
+		return View::make('minimal.posts.postsEdit', $data);
 	}
 
 	/**
@@ -76,7 +78,15 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+
+		$postEdited = Input::all();
+		$post = Post::find($id);
+		$post->title = $postEdited['title'];
+		$post->content = $postEdited['content'];
+		$post->save();
+
+		return Redirect::to('posts');
+
 	}
 
 	/**
@@ -87,7 +97,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Post::destroy($id);
+		return Redirect::to('posts');
+
 	}
 
 }
