@@ -8,6 +8,8 @@
     {{ HTML::style('packages/bootstrap/css/bootstrap.css') }}
 	{{ HTML::style('packages/minimal.css') }}
 
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 	<link href='http://fonts.googleapis.com/css?family=Exo+2:100' rel='stylesheet' type='text/css'>
 
 

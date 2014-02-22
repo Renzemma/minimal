@@ -15,7 +15,10 @@
 | ROOT DIR
 */
 Route::get('/',function(){
-	return "Hola";
+
+	$posts = Post::orderBy('id', 'desc')->paginate(10);
+	$data['posts'] = $posts;
+	return View::make('minimal.hi', $data);
 });
 
 /*
