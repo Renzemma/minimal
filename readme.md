@@ -1,4 +1,3 @@
-
 ## MINIMAL Blog
 
 ![alt tag](http://imageshack.com/a/img842/4290/31qk.png)
@@ -25,6 +24,10 @@
     -----
     
     go to your localhost:8000
+    
+    # Remember that this repo comes with a profiler, you can remove it by
+    1.- remove composer.json entry
+    2.- remove /app/app.php provider and alias
     
     
     Minimal is build using:
