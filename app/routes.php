@@ -11,7 +11,39 @@
 |
 */
 
-Route::get('/', function()
+/*
+| ROOT DIR
+*/
+Route::get('/',function(){
+
+	$posts = Post::orderBy('id', 'desc')->paginate(10);
+	$data['posts'] = $posts;
+	return View::make('minimal.hi', $data);
+});
+
+/*
+| AUTH HANDLER
+*/
+Route::get('enter', array('as' => 'enter', 'uses' => 'EnterController@index'));
+Route::post('login', array('as' => 'login', 'uses' => 'EnterController@login'));
+
+/*
+| ONLY-AUTH SECTION
+*/
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('hello');
+	/*
+	| AFTER LOGIN (TRUE) -> GO
+	*/
+	Route::get('go',array('as' => 'go', 'uses' => 'EnterController@enter'));
+	/*
+	|LOGOUT HANDLER
+	*/
+	Route::get('logout',array('as' => 'logout', 'uses' => 'EnterController@logout'));
+
+	/*
+	| APP ADMIN SECTIONS
+	*/
+	Route::resource('minimal','MinimalController');
+	Route::resource('posts','PostsController');
 });
