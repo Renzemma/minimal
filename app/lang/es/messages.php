@@ -38,6 +38,8 @@ return array(
 	'title' => 'Titulo',
 	'creator' => 'Creador',
 	'options' => 'Opciones',
+	'seeMore' => 'Ver más',
+	'completePost' => 'Artículo completo',
 
 	'mainContent' => 'Contenido Principal',
 	'krakenCliche' => 'Liberen al Kraken...digo...las ideas'

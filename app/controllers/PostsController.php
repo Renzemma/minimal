@@ -54,7 +54,9 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return "1111";
+
+		$data['post'] = Post::find($id);
+		return View::make('minimal.posts.postsShow', $data);
 	}
 
 	/**

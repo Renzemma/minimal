@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="col-lg-12 col-md-6">
 				<h1>MINIMAL Blog</h1>
-				
+				<a href="/"> <span class="glyphicon glyphicon-list"></span> HOME </a>
 			</div>
 		</div>
 	</div>
@@ -16,26 +16,16 @@
 			<div class="container" style="max-width:600px;">
 
 				<div style="margin-bottom:50px;">
-					@foreach ($posts as $post => $key)
 					<div style="margin-bottom: 100px;">
 						<div>
-
-							<h3>{{ $key->title }}</h3>
-							<div style="height:370px;overflow: hidden;">
-								{{ $key->content }}
-							</div>
-							<div style="margin-top:20px;">
-							<a class="btn btn-default pull-right" href="{{ URL::route('posts.show', $key->id ) }}">{{ trans('messages.completePost') }}</a>
+							<h3>{{ $post->title }}</h3>
+							<div>
+								{{ $post->content }}
 							</div>
 						</div>			
 					</div>
-					@endforeach
 				</div>
 
-
-				<div class="pull-right">
-					{{ $posts->links() }}
-				</div>
 			</div>
 		</div>
 
