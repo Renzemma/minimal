@@ -8,33 +8,54 @@
   
   Fast, Easy, Blogging features
   
+  Why not Wordpress ? too big for just blogging
+  
+  Why not other blog app out there ? tired of codeigniter/yii/symfony blogs powered
 
+  Minimal Localization:
+----------------
+    
+    /es
+    /en
+  
+  Minimal is build thanks to:
+----------------------
+
+- Laravel 4
+- Bootstrap 3
+- Glyph Icons
+- Font Awsome
 
     Install:
     -------
-  
-    >_ git clone http://repo
-    >_ composer update
+    > git clone https://github.com/cristiandley/minimal.git
+    
+    > composer update
     
     (configure your database at /app/config/database.php)
     
-    >_ php artisan serve
+    > php artisan migrate:install
+    
+    > php artisan migrate
+    
+    > php artisan db:seed
+    
+    > php artisan serve
+    
+    Or in your domain clone then domain.url/enter (login: admin/admin)
+    
     
     Using: 
     -----
-    
     go to your localhost:8000
     
-    # Remember that this repo comes with a profiler, you can remove it by
+    # Remember that a profiler is pre-installed to start testing/editing.
+    
+    You can disable it:
+    
     1.- remove composer.json entry
+    
     2.- remove /app/app.php provider and alias
     
     
-    Minimal is build using:
-    ----------------------
-    
-    Laravel 4
-    Bootstrap 3
-    GlyphIcons
-    FontAwsome
 

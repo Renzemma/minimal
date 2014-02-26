@@ -47,3 +47,47 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('minimal','MinimalController');
 	Route::resource('posts','PostsController');
 });
+
+/*
+|
+| QUEUE //IRON.IO//
+|
+*/
+
+
+Route::get('queue/send', function()
+{
+
+	Queue::push('WriteFile', array('string' => 'Hello World'));
+
+	return 'OK';
+
+});
+
+Route::post('queue/push', function()
+{
+
+	return Queue::marshal();
+
+});
+
+/*
+|
+| //MUST BE SEPARATED FROM ROUTES.PHP
+| WRITE FILE
+|
+*/
+
+class WriteFile {
+
+
+	public function fire($job,$data)
+	{
+
+		File::append(__DIR__.'/queue.txt', $data['string'].PHP_EOL);
+
+		$job->delete();
+
+	}
+
+}
